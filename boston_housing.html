@@ -196,7 +196,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Importing a few necessary libraries</span>
@@ -262,14 +262,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Number of houses in the dataset</span>
 <span class="n">total_houses</span> <span class="o">=</span> <span class="n">housing_prices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># Number of features in the dataset</span>
-<span class="n">total_features</span> <span class="o">=</span> <span class="n">housing_prices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">total_features</span> <span class="o">=</span> <span class="n">housing_features</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># Minimum housing value in the dataset</span>
 <span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">housing_prices</span><span class="p">)</span>
@@ -310,7 +310,7 @@ div#notebook {
 <pre>Boston Housing dataset statistics (in $1000&apos;s):
 
 Total number of houses: 506
-Total number of features: 506
+Total number of features: 13
 Minimum house price: 5.0
 Maximum house price: 50.0
 Mean house price: 22.533
@@ -674,7 +674,9 @@ Ensure that you have executed the code block once you are done. You'll know the 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Grid search algorithm is used to search parameter which have least error with the data using the regressor provided.</p>
+<p><strong>Answer: </strong> Grid search algorithm is used to search parameter which have least error with the data using the regressor provided.
+ We have a scoring function which tells the grid search which parameter is better than the other. The grid search will run through the paramaters from 1 to 10 which have least error.
+ Grid search is applicale for hyperparameter optimization, which should be guided by a performance metric typically measured by Cross validation on the training set.</p>
 
 </div>
 </div>
@@ -694,7 +696,8 @@ Ensure that you have executed the code block once you are done. You'll know the 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Cross validation is a model evaluation technique, which wil vaidate how are model is generalised. The goal of the Cross validation is to test the model in the training phase and to limit the problems like "over fitting" Cross validation techniques(such as K-fold) will run multiple tests on varying subsets of training and testing data from the dataset to validat the data to fit properly</p>
+<p><strong>Answer: </strong> Cross validation is a model evaluation technique, which wil vaidate how are model is generalised. The goal of the Cross validation is to test the model in the training phase and to limit the problems like "over fitting" Cross validation techniques(such as K-fold) will run multiple tests on varying subsets of training and testing data from the dataset to validat the data to fit properly.
+The <strong>Cross- validation</strong> is used validate the best performing model from the set of Models selected from Grid Searc algorithm.</p>
 
 </div>
 </div>
@@ -1813,7 +1816,8 @@ RESpxzzsAdYkExERERGFYZtkIiIiIqIwLCQTEREREYVhIZmIiIiIKAwLyUREREREYVhIJiIiIiIK
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The maximum depth is 10. When the training sets increasesthe training error decreases and get flatterened around 10</p>
+<p><strong>Answer: </strong> The maximum depth is 10. When the training sets increasesthe training error decreases and get flatterened around 10.
+The training error increases slightly to 1.</p>
 
 </div>
 </div>
@@ -1833,7 +1837,10 @@ RESpxzzsAdYkExERERGFYZtkIiIiIqIwLCQTEREREYVhIZmIiIiIKAwLyUREREREYVhIJiIiIiIK
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Look at the learning curve graphs for the model with a max depth of 1 and a max depth of 10. When the model is using the full training set, does it suffer from high bias or high variance when the max depth is 1? What about when the max depth is 10?</p>
+<p><strong>Answer: </strong> <strong>Max_depth 1:</strong>
+High Bias (underfitting) It looks like, even after the training, there is high error on training datasets as well as testing datasets. Which shows that the model suffers from high bias.
+<strong>Max_depth 10:</strong>
+High Variance (errors on testing data) With the depth of 10, the training data is over-fitted. Hence has low error for training data sets, but errors on testing datasets</p>
 
 </div>
 </div>
@@ -2221,7 +2228,7 @@ gg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> As the depth increases the training error decreases exponentially and it becomes almost  0, where as the testing error also decreases exponenetially and it becomes flattered atlevele 30. The max depth of our model is 35, which best suits to generalise our model</p>
+<p><strong>Answer: </strong> The max depth of our model is 4, which best suits to generalise our model, which looks like after the depth of 4, the model may be overfitting to improve the training error performance</p>
 
 </div>
 </div>

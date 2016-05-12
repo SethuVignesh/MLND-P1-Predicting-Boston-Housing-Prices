@@ -1,0 +1,4 @@
+https://en.wikipedia.org/wiki/Hyperparameter_optimization
+http://scikit-learn.org/stable/modules/grid_search.html
+https://en.wikipedia.org/wiki/Occam%27s_razor
+https://en.wikipedia.org/wiki/Occam%27s_razor
