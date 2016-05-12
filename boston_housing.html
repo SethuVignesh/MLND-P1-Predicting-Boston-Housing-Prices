@@ -696,8 +696,9 @@ Ensure that you have executed the code block once you are done. You'll know the 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Cross validation is a model evaluation technique, which wil vaidate how are model is generalised. The goal of the Cross validation is to test the model in the training phase and to limit the problems like "over fitting" Cross validation techniques(such as K-fold) will run multiple tests on varying subsets of training and testing data from the dataset to validat the data to fit properly.
-The <strong>Cross- validation</strong> is used validate the best performing model from the set of Models selected from Grid Searc algorithm.</p>
+<p><strong>Answer: </strong> Cross validation is a model evaluation technique, which wil vaidate how are model is generalised. The goal of the Cross validation is to test the model in the training phase and to limit the problems like "over fitting" Cross validation techniques(such as K-fold) will run multiple tests on varying subsets of training and testing data from the dataset to validat the data to fit properly.</p>
+<p>The <strong>Cross- validation</strong> is used validate the best performing model from the set of Models selected from Grid Searc algorithm.</p>
+<p>Why we are using the Cross validation instead of train_test_split is that the train_test_split will give a score of only a fixed train and test datas. So the problem may be the pattern took from train data may fit good for our model, that will affect the performance of our model during test and generalisation. But in the case of K fold Cross validation the data sets for training and testing will be taken randomly from multiple samples, so Our model performance can be validated in this scenario.</p>
 
 </div>
 </div>
@@ -1837,10 +1838,12 @@ The training error increases slightly to 1.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> <strong>Max_depth 1:</strong>
-High Bias (underfitting) It looks like, even after the training, there is high error on training datasets as well as testing datasets. Which shows that the model suffers from high bias.
-<strong>Max_depth 10:</strong>
+<p><strong>Answer:</strong></p>
+<p><strong>Max_depth 1:</strong>
+High Bias (underfitting) It looks like, even after the training, there is high error on training datasets as well as testing datasets. Which shows that the model suffers from high bias.</p>
+<p><strong>Max_depth 10:</strong>
 High Variance (errors on testing data) With the depth of 10, the training data is over-fitted. Hence has low error for training data sets, but errors on testing datasets</p>
+<p>As the Max depth increases the Training error keeps on decreasing and it becomes minimal at the max depth of 10. Whereas the Testing curve slowly decreasing as the depth increase but maintains a flattened state after the max depth of 6</p>
 
 </div>
 </div>
